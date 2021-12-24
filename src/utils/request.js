@@ -4,14 +4,24 @@ import { Modal } from "antd";
 import { getToken } from "@/utils/auth";
 import { logout } from "@/store/actions";
 
+axios.defaults.withCredentials = true
+axios.defaults.crossDomain = true
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+
 //创建一个axios示例
 const service = axios.create({
   baseURL: process.env.REACT_APP_BASE_API, // api 的 base_url
   timeout: 5000, // request timeout
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "a":"b",
+    'Content-Type':'application/x-www-form-urlencoded'
+    }
 });
 
-console.log(`REACT_APP_BASE_API ${process.env.REACT_APP_BASE_API}`)
-  
+// header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+// header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
+
 // 请求拦截器
 service.interceptors.request.use(
   (config) => {
@@ -67,23 +77,23 @@ service.interceptors.response.use(
   // },
   (error) => {
     console.log("err" + error); // for debug
-    const { status } = error.response;
-    if (status === 403) {
-      Modal.confirm({
-        title: "确定登出?",
-        content:
-          "由于长时间未操作，您已被登出，可以取消继续留在该页面，或者重新登录",
-        okText: "重新登录",
-        cancelText: "取消",
-        onOk() {
-          let token = store.getState().user.token;
-          store.dispatch(logout(token));
-        },
-        onCancel() {
-          console.log("Cancel");
-        },
-      });
-    }
+    // const { status } = error.response;
+    // if (status === 403) {
+    //   Modal.confirm({
+    //     title: "确定登出?",
+    //     content:
+    //       "由于长时间未操作，您已被登出，可以取消继续留在该页面，或者重新登录",
+    //     okText: "重新登录",
+    //     cancelText: "取消",
+    //     onOk() {
+    //       let token = store.getState().user.token;
+    //       store.dispatch(logout(token));
+    //     },
+    //     onCancel() {
+    //       console.log("Cancel");
+    //     },
+    //   });
+    // }
     return Promise.reject(error);
   }
 );

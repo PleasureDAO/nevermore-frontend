@@ -1,8 +1,7 @@
 import request from '@/utils/request'
 export function tableList(data) {
-  console.log(`qre`)
   return request({
-    url: '/table/list',
+    url: 'http://localhost:3001/table/list',
     method: 'post',
     data
   })

@@ -55,7 +55,7 @@ class EditForm extends Component {
           </Form.Item>
           <Form.Item label="推荐指数:">
             {getFieldDecorator("star", {
-              initialValue: star.length,
+              initialValue: 1,
             })(<Rate count={3} />)}
           </Form.Item>
           <Form.Item label="状态:">
