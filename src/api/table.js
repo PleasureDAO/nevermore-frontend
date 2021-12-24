@@ -1,5 +1,6 @@
 import request from '@/utils/request'
 export function tableList(data) {
+  console.log(`qre`)
   return request({
     url: '/table/list',
     method: 'post',

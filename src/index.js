@@ -5,5 +5,5 @@ import "antd/dist/antd.less";
 import "@/styles/index.less";
 import "./mock";
 import '@/lib/monitor';
-
+console.log(`qqqqqqqq`)
 ReactDOM.render(<App />, document.getElementById("root"));

@@ -2,7 +2,17 @@ import Mock from "mockjs";
 let List = [];
 const count = 100;
 
+List.push({
+    id: 998,
+    title: "nevermore",
+    author: "nevermore auth",
+    readings: "16888",
+    "star": "★",
+    "status": ["published", "draft"],
+    date: "@datetime",
+  });
 for (let i = 0; i < count; i++) {
+  
   List.push(
     Mock.mock({
       id: i,

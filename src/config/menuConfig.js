@@ -4,6 +4,12 @@
  */
 const menuList = [
   {
+    title: "表格",
+    path: "/table",
+    icon: "table",
+    roles:["admin","editor"]
+  },
+  {
     title: "首页",
     path: "/dashboard",
     icon: "home",
@@ -124,12 +130,7 @@ const menuList = [
       },
     ],
   },
-  {
-    title: "表格",
-    path: "/table",
-    icon: "table",
-    roles:["admin","editor"]
-  },
+  
   {
     title: "Excel",
     path: "/excel",

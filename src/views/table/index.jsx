@@ -41,6 +41,7 @@ class TableComponent extends Component {
     }
   };
   fetchData = () => {
+    console.log(`fetchData`)
     this.setState({ loading: true });
     tableList(this.state.listQuery).then((response) => {
       this.setState({ loading: false });
@@ -193,6 +194,7 @@ class TableComponent extends Component {
           dataSource={this.state.list}
           loading={this.state.loading}
           pagination={false}
+          scroll={{x: '100%'}}
         >
           <Column title="序号" dataIndex="id" key="id" width={200} align="center" sorter={(a, b) => a.id - b.id}/>
           <Column title="标题" dataIndex="title" key="title" width={200} align="center"/>
@@ -209,13 +211,13 @@ class TableComponent extends Component {
             );
           }}/>
           <Column title="时间" dataIndex="date" key="date" width={195} align="center"/>
-          <Column title="操作" key="action" width={195} align="center"render={(text, row) => (
+          {/* <Column title="操作" key="action" width={195} align="center"render={(text, row) => (
             <span>
               <Button type="primary" shape="circle" icon="edit" title="编辑" onClick={this.handleEdit.bind(null,row)}/>
               <Divider type="vertical" />
               <Button type="primary" shape="circle" icon="delete" title="删除" onClick={this.handleDelete.bind(null,row)}/>
             </span>
-          )}/>
+          )}/> */}
         </Table>
         <br />
         <Pagination

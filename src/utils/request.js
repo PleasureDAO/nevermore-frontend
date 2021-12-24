@@ -10,6 +10,8 @@ const service = axios.create({
   timeout: 5000, // request timeout
 });
 
+console.log(`REACT_APP_BASE_API ${process.env.REACT_APP_BASE_API}`)
+  
 // 请求拦截器
 service.interceptors.request.use(
   (config) => {

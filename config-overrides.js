@@ -10,6 +10,9 @@ function resolve(dir) {
 }
 process.env.CI = "false";
 const addCustomize = () => (config) => {
+  console.log(`wwww`)
+  console.log(config)
+
   if (config.output.publicPath) {
     config.output.publicPath =
       process.env.NODE_ENV === "production"
@@ -21,6 +24,7 @@ const addCustomize = () => (config) => {
   }
   return config;
 };
+
 module.exports = override(
   // 针对antd实现按需打包: 根据import来打包(使用babel-plugin-import)
   fixBabelImports("import", {
