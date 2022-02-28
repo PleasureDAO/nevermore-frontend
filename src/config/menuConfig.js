@@ -16,6 +16,12 @@ const menuList = [
     roles:["admin","editor","guest"]
   },
   {
+    title: "黄正Dapp",
+    path: "/dapp",
+    icon: "file",
+    roles:["admin","editor","guest"]
+  },
+  {
     title: "开发文档",
     path: "/doc",
     icon: "file",
