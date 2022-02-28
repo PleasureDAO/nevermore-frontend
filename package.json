@@ -41,7 +41,8 @@
     "screenfull": "^5.0.2",
     "script-loader": "^0.7.2",
     "xlsx": "^0.16.0",
-    "child_process": "latest"
+    "child_process": "latest",
+    "ethers":"5.2.0"
   },
   "scripts": {
     "start": "react-app-rewired start",

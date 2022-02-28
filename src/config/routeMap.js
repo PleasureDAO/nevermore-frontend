@@ -29,7 +29,7 @@ const Bug = Loadable({loader: () => import(/*webpackChunkName:'Bug'*/'@/views/bu
 export default [
   { path: "/dashboard", component: Dashboard, roles: ["admin","editor","guest"] },
   { path: "/doc", component: Doc, roles: ["admin","editor","guest"] },
-  { path: "/dapp", component: Doc, roles: ["admin","editor","guest"] },
+  { path: "/dapp", component: Dapp, roles: ["admin","editor","guest"] },
   { path: "/guide", component: Guide, roles: ["admin","editor"] },
   { path: "/permission/explanation", component: Explanation, roles: ["admin"] },
   { path: "/permission/adminPage", component: AdminPage, roles: ["admin"] },
